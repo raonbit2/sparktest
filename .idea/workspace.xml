@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa3320f-a102-44f9-9ac2-f85f9cdc0bed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/PageRank.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkRDD.java" afterPath="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkRDD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/impl/SparkRDDImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/impl/SparkRDDImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkSQL.java" afterPath="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkSQL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/impl/SparkSQLImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/impl/SparkSQLImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pagerank.iws" />
@@ -30,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SparkRDD.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SparkRDD.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkRDD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39077342">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
               <folding>
                 <element signature="e#1122#1123#0" expanded="true" />
                 <element signature="e#1148#1149#0" expanded="true" />
@@ -47,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/PageRank.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
               <folding>
                 <element signature="e#1468#1738#0" expanded="true" />
                 <element signature="e#1737#1738#0" expanded="true" />
@@ -58,14 +55,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SparkSQL.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SparkSQL.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkSQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5848033">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
                 <element signature="e#1178#1179#0" expanded="true" />
                 <element signature="e#1204#1205#0" expanded="true" />
+                <element signature="e#1494#1495#0" expanded="true" />
+                <element signature="e#1533#1534#0" expanded="true" />
+                <element signature="e#1622#1623#0" expanded="true" />
+                <element signature="e#1661#1662#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,10 +114,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/impl/SparkRDD.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkRDD.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/impl/SparkRDDImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/impl/SparkSQLImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/PageRank.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkRDD.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkSQL.java" />
       </list>
     </option>
@@ -698,7 +699,7 @@
       <created>1438566602375</created>
       <option name="number" value="Default" />
       <updated>1438566602375</updated>
-      <workItem from="1438566605337" duration="6637000" />
+      <workItem from="1438566605337" duration="8826000" />
     </task>
     <task id="LOCAL-00001" summary="update ..">
       <created>1438569214456</created>
@@ -712,11 +713,17 @@
       <option name="project" value="LOCAL" />
       <updated>1438570120486</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update ..">
+      <created>1438575342215</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1438575342215</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6637000" />
+    <option name="totallyTimeSpent" value="8826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1924" height="1204" extended-state="6" />
@@ -786,19 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/PageRank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#1468#1738#0" expanded="true" />
-            <element signature="e#1737#1738#0" expanded="true" />
-            <element signature="e#1911#2081#0" expanded="true" />
-            <element signature="e#2080#2081#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/impl/SparkSQLImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -810,24 +804,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkSQL.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkRDD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
           <folding>
-            <element signature="e#1178#1179#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1148#1149#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkRDD.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/PageRank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39077342">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
           <folding>
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
+            <element signature="e#1468#1738#0" expanded="true" />
+            <element signature="e#1737#1738#0" expanded="true" />
+            <element signature="e#1911#2081#0" expanded="true" />
+            <element signature="e#2080#2081#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/raon/example/pagerank/SparkSQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5848033">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#1178#1179#0" expanded="true" />
+            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1494#1495#0" expanded="true" />
+            <element signature="e#1533#1534#0" expanded="true" />
+            <element signature="e#1622#1623#0" expanded="true" />
+            <element signature="e#1661#1662#0" expanded="true" />
           </folding>
         </state>
       </provider>

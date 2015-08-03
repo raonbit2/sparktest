@@ -41,12 +41,12 @@ public class SparkSQL extends PageRank {
 
     // 1. 점수가 높은 순서대로 TOP 5 노드 출력 구현.
     protected void displayTop5(JavaPairRDD<String, Double> ranks) {
-
+        convertDataFrame(ranks);
     }
 
     // 2. 평균값 출력 구현.
     protected void displayAvg(JavaPairRDD<String, Double> ranks) {
-
+        convertDataFrame(ranks);
     }
 
     public static void main(String[] args) throws Exception {

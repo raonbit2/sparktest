@@ -32,7 +32,7 @@ public class SparkRDD extends PageRank {
         super(ctx);
     }
 
-    // 1. 점수가 높은 순서대로 TOP 5 노드 출력 구현.
+    // 1. 점수가 높은 순서로 TOP 5 노드 출력 구현.
     protected void displayTop5(JavaPairRDD<String, Double> ranks) {
 
     }
