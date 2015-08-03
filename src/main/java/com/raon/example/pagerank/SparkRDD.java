@@ -34,12 +34,12 @@ public class SparkRDD extends PageRank {
 
     // 1. 점수가 높은 순서로 TOP 5 노드 출력 구현.
     protected void displayTop5(JavaPairRDD<String, Double> ranks) {
-
+        // 구현 ..
     }
 
     // 3. 평균값 출력 구현.
     protected void displayAvg(JavaPairRDD<String, Double> ranks) {
-
+        // 구현 ..
     }
 
     public static void main(String[] args) throws Exception {
