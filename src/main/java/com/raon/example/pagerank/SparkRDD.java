@@ -107,32 +107,11 @@ public final class SparkRDD {
 
     // 1. 점수가 높은 순서대로 TOP 5 노드 출력 구현.
     private static void displayTop5(JavaPairRDD<String, Double> ranks) {
-        JavaPairRDD<Double, String> countLinks = ranks.mapToPair(new PairFunction<Tuple2<String, Double>, Double, String>() {
-            @Override
-            public Tuple2<Double, String> call(Tuple2<String, Double> stringIntegerTuple2) throws Exception {
-                return stringIntegerTuple2.swap();
-            }
-        });
-        List<Tuple2<Double, String>> top5 = countLinks.sortByKey(false).take(5);
-        for (Tuple2<?,?> tuple : top5) {
-            System.out.println("Url: " + tuple._2() + ", Score:" + tuple._1());
-        }
+
     }
 
     // 3. 평균값 출력 구현.
     private static void displayAvg(JavaPairRDD<String, Double> ranks) {
-        JavaRDD<Double> scores = ranks.map(new Function<Tuple2<String, Double>, Double>() {
-            public Double call(Tuple2<String, Double> tuple) throws Exception {
-                return tuple._2();
-            }
-        });
 
-        double count = scores.count();
-        double sum = scores.fold(0.0, new Function2<Double, Double, Double>() {
-            public Double call(Double v1, Double v2) throws Exception {
-                return v1 + v2;
-            }
-        });
-        System.out.println("Avg: " + sum / count);
     }
 }
