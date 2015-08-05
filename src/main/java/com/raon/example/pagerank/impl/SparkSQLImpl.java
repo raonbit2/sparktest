@@ -24,19 +24,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class SparkSQLImpl extends PageRank {
+public class SparkSQLImpl {
 
-    static SparkConf sparkConf = new SparkConf().setAppName("PageRank").setMaster("local[*]");
+    static SparkConf sparkConf = new SparkConf();
     static JavaSparkContext ctx = new JavaSparkContext(sparkConf);
     static SQLContext sqlContext = new SQLContext(ctx);
 
-    public SparkSQLImpl(JavaSparkContext ctx) {
-        super(ctx);
-    }
-
     // 0. RDD를 DataFrame로 변환 구현.
     // http://spark.apache.org/docs/latest/sql-programming-guide.html 참고
-    private void convertDataFrame(JavaPairRDD<String, Double> ranks) {
+    private static void convertDataFrame(JavaPairRDD<String, Double> ranks) {
         // Create schema
         List<StructField> fields = new ArrayList<StructField>();
         fields.add(DataTypes.createStructField("url", DataTypes.StringType, true));
@@ -59,7 +55,7 @@ public class SparkSQLImpl extends PageRank {
     }
 
     // 1. 점수가 높은 순서대로 TOP 5 노드 출력 구현.
-    protected void displayTop5(JavaPairRDD<String, Double> ranks) {
+    public static void displayTop5(JavaPairRDD<String, Double> ranks) {
         convertDataFrame(ranks);
 
         DataFrame results = sqlContext.sql("SELECT url, score FROM PageRank order by score desc").limit(5);
@@ -74,7 +70,7 @@ public class SparkSQLImpl extends PageRank {
     }
 
     // 2. 평균값 출력 구현.
-    protected void displayAvg(JavaPairRDD<String, Double> ranks) {
+    public static void displayAvg(JavaPairRDD<String, Double> ranks) {
         convertDataFrame(ranks);
         DataFrame results = sqlContext.sql("SELECT avg(score) FROM PageRank");
         List<String> age = results.javaRDD().map(new Function<Row, String>() {
@@ -88,6 +84,17 @@ public class SparkSQLImpl extends PageRank {
     }
 
     public static void main(String[] args) throws Exception {
-        new SparkSQLImpl(ctx);
+
+        JavaRDD<String> lines = ctx.textFile("pagerank-simple.txt");
+
+        PageRank pagerank = new PageRank();
+
+        JavaPairRDD<String, Double> ranks = pagerank.getRank(lines);
+
+        displayTop5(ranks);
+
+        displayAvg(ranks);
+
+
     }
 }

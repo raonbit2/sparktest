@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public abstract class PageRank implements Serializable {
+public class PageRank implements Serializable {
     private static final Pattern SPACES = Pattern.compile("\\s+");
 
     private static class Sum implements Function2<Double, Double, Double> {
@@ -27,16 +27,14 @@ public abstract class PageRank implements Serializable {
         }
     }
 
-    public PageRank(JavaSparkContext ctx) {
-        //SparkConf sparkConf = new SparkConf().setAppName("PageRank").setMaster("local[*]");
-        //ctx = new JavaSparkContext(sparkConf);
+    public JavaPairRDD<String, Double> getRank(JavaRDD<String> lines) {
+
         JavaPairRDD<String, Double> ranks = null;
         // File Loading
         //     URL         neighbor URL
         //     URL         neighbor URL
         //     URL         neighbor URL
         //     ...
-        JavaRDD<String> lines = ctx.textFile("pagerank-simple.txt", 1);
 
         JavaPairRDD<String, Iterable<String>> links = lines.mapToPair(new PairFunction<String, String, String>() {
             @Override
@@ -85,19 +83,7 @@ public abstract class PageRank implements Serializable {
             System.out.println(tuple._1() + " has rank: " + tuple._2() + ".");
         }
 
-        // 1. 점수가 높은 순서대로 TOP 5 노드 출력.
-        displayTop5(ranks);
-
-        // 2. 평균값 출력
-        displayAvg(ranks);
-
-        ctx.stop();
+        return ranks;
     }
-
-    // 1. 점수가 높은 순서대로 TOP 5 노드 출력 구현.
-    protected abstract void displayTop5(JavaPairRDD<String, Double> ranks);
-
-    // 2. 평균값 출력 구현.
-    protected abstract void displayAvg(JavaPairRDD<String, Double> ranks);
 
 }

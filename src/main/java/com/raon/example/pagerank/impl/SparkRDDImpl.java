@@ -17,16 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public final class SparkRDDImpl extends PageRank {
-    static SparkConf sparkConf = new SparkConf().setAppName("PageRank").setMaster("local[*]");
-    static JavaSparkContext ctx = new JavaSparkContext(sparkConf);
+public final class SparkRDDImpl {
 
-    public SparkRDDImpl(JavaSparkContext ctx) {
-        super(ctx);
-    }
 
     // 1. 점수가 높은 순서대로 TOP 5 노드 출력 구현.
-    protected void displayTop5(JavaPairRDD<String, Double> ranks) {
+    public static void displayTop5(JavaPairRDD<String, Double> ranks) {
         JavaPairRDD<Double, String> countLinks = ranks.mapToPair(new PairFunction<Tuple2<String, Double>, Double, String>() {
             @Override
             public Tuple2<Double, String> call(Tuple2<String, Double> stringIntegerTuple2) throws Exception {
@@ -37,10 +32,11 @@ public final class SparkRDDImpl extends PageRank {
         for (Tuple2<?,?> tuple : top5) {
             System.out.println("Url: " + tuple._2() + ", Score:" + tuple._1());
         }
+
     }
 
     // 2. 평균값 출력 구현.
-    protected void displayAvg(JavaPairRDD<String, Double> ranks) {
+    public static void displayAvg(JavaPairRDD<String, Double> ranks) {
         JavaRDD<Double> scores = ranks.map(new Function<Tuple2<String, Double>, Double>() {
             public Double call(Tuple2<String, Double> tuple) throws Exception {
                 return tuple._2();
@@ -57,6 +53,20 @@ public final class SparkRDDImpl extends PageRank {
     }
 
     public static void main(String[] args) throws Exception {
-        new SparkRDDImpl(ctx);
+
+        SparkConf sparkConf = new SparkConf();
+        JavaSparkContext ctx = new JavaSparkContext(sparkConf);
+
+        JavaRDD<String> lines = ctx.textFile("pagerank-simple.txt");
+
+        PageRank pagerank = new PageRank();
+
+        JavaPairRDD<String, Double> ranks = pagerank.getRank(lines);
+
+        displayTop5(ranks);
+
+        displayAvg(ranks);
+
+
     }
 }
